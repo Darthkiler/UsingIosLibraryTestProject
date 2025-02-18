@@ -1,6 +1,5 @@
 package org.example.project
 
-import com.example.networkmodels.PhotoNetworkModel
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.engine.embeddedServer
@@ -12,6 +11,7 @@ import io.ktor.server.routing.routing
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.Json.Default.encodeToString
+import org.example.project.model.PhotoNetworkModel
 import kotlin.random.Random
 
 fun main() {

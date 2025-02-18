@@ -1,4 +1,4 @@
-package com.example.networkmodels
+package org.example.project.data.networkModels
 
 import kotlinx.serialization.Serializable
 
