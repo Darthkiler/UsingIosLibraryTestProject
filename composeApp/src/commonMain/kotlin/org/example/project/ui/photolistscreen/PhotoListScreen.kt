@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.example.project.ui.components.AsyncImage
 import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -57,7 +58,10 @@ fun PhotoListScreen(
                     Card(
                         shape = RoundedCornerShape(24.dp),
                     ) {
-                        Box(modifier = Modifier.size(200.dp))
+                        AsyncImage(
+                            modifier = Modifier.size(width = 200.dp, height = 300.dp),
+                            url = item.url,
+                        )
                     }
                 }
             }
