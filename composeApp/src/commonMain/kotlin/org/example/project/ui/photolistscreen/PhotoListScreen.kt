@@ -52,6 +52,7 @@ fun PhotoListScreen(
     ) { padding ->
         Box(
             modifier = Modifier.fillMaxSize().padding(padding),
+            contentAlignment = Alignment.TopCenter
         ) {
             when {
                 uiState.isLoading -> {
