@@ -19,7 +19,7 @@ class KtorRemotePhotoDataSource(
                 )
             }
         )
-//        safeCall {
+//       return safeCall {
 //            httpClient.get(
 //                urlString = "http://0.0.0.0:8080/photoList"
 //            )

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <string name="photo_list_error">Oops, something went wrong!</string>
+    <string name="photo_list_empty">Sorry, there is no photo here...</string>
+    <string name="retry">Retry</string>
+</resources>

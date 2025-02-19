@@ -19,20 +19,38 @@ class PhotoListScreenViewModel(
         initPhotoList()
     }
 
+    fun onRetryClick() {
+        if (_uiState.value.isLoading.not()) {
+            _uiState.update { it.copy(isLoading = true) }
+            initPhotoList()
+        }
+    }
+
     private fun initPhotoList() {
         viewModelScope.launch {
             photoRepository.getPhotoList().let { result: Result<List<Photo>> ->
                 println(result)
                 result.onSuccess { list ->
                     _uiState.update {
-                        it.copy(list = list)
+                        it.copy(
+                            list = list,
+                            isLoading = false
+                        )
                     }
+                }
+                result.onFailure {
+                    _uiState.update { it.copy(
+                        isLoading = false,
+                        isError = true
+                    ) }
                 }
             }
         }
     }
 
     data class PhotoListScreenUIState(
-        val list: List<Photo> = emptyList()
+        val list: List<Photo> = emptyList(),
+        val isLoading: Boolean = true,
+        val isError: Boolean = false,
     )
 }
